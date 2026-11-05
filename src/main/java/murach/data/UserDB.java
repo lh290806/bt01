@@ -13,10 +13,9 @@ public class UserDB {
 
         String dbPass = System.getenv("DB_PASSWORD");
 
-
-        if (dbPass == null) {
-            dbPass = "kCZ52PLFcZb7GtKD"; 
-        }
+//        if (dbPass == null) {
+//            dbPass = "kCZ52PLFcZb7GtKD";
+//        }
 
         String query = "INSERT INTO Users (Email, FirstName, LastName) VALUES (?, ?, ?)";
         int result = 0;

@@ -38,7 +38,7 @@ public class EmailListServlet extends HttpServlet {
 
             // Tạo đối tượng User và "lưu" vào DB
             User user = new User(firstName, lastName, email);
-            //UserDB.insert(user);
+            UserDB.insert(user);
 
             // Gắn đối tượng User vào request để truyền sang file JSP
             request.setAttribute("user", user);

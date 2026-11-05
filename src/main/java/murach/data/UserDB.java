@@ -8,9 +8,13 @@ import murach.business.User;
 public class UserDB {
     public static int insert(User user) {
         // Chuyển đổi thành đường dẫn chuẩn JDBC của Java
+        // Giữ nguyên chuỗi kết nối và user
         String dbUrl = "jdbc:postgresql://db.isktlhjoxvaetezlxkpx.supabase.co:5432/postgres";
         String dbUser = "postgres";
-        String dbPass = "kCZ52PLFcZb7GtKD";
+
+        // Thay vì: String dbPass = "MatKhauCuaBan123";
+        // Hãy đổi thành:
+        String dbPass = System.getenv("DB_PASSWORD");
 
         String query = "INSERT INTO Users (Email, FirstName, LastName) VALUES (?, ?, ?)";
         int result = 0;

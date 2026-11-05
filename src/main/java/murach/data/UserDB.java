@@ -7,14 +7,14 @@ import murach.business.User;
 
 public class UserDB {
     public static int insert(User user) {
-        // Chuyển đổi thành đường dẫn chuẩn JDBC của Java
-        // Giữ nguyên chuỗi kết nối và user
-        String dbUrl = "jdbc:postgresql://db.isktlhjoxvaetezlxkpx.supabase.co:5432/postgres";
-        String dbUser = "postgres";
+        // 1. URL kết nối (Xóa phần ?user=... ở đuôi đi)
+        String dbUrl = "jdbc:postgresql://aws-0-ap-southeast-2.pooler.supabase.com:5432/postgres";
 
-        // Thay vì: String dbPass = "MatKhauCuaBan123";
-        // Hãy đổi thành:
-        String dbPass = System.getenv("DB_PASSWORD");
+        // 2. Tên đăng nhập (Lấy chính xác đoạn mã Supabase cấp cho bạn)
+        String dbUser = "postgres.isktlhjoxvaetezlxkpx";
+
+        // 3. Mật khẩu thật của bạn (Bỏ dấu ngoặc vuông đi)
+        String dbPass = "kCZ52PLFcZb7GtKD";
 
         String query = "INSERT INTO Users (Email, FirstName, LastName) VALUES (?, ?, ?)";
         int result = 0;
